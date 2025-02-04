@@ -1,0 +1,261 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 3em;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+.total-hours {
+    text-align: center;
+    font-size: 1.8em;
+    color: #1abc9c;
+    margin-bottom: 30px;
+    animation: slideInFromTop 1s ease-in-out;
+}
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    position: relative;
+}
+.progress-bar {
+    width: 80%;
+    height: 25px;
+    background-color: #ecf0f1;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1), inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #1abc9c, #3498db, #9b59b6);
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: progressBarAnimation 2s ease-in-out;
+}
+.progress-text {
+    font-size: 1.4em;
+    color: #2c3e50;
+    margin-left: 15px;
+    font-weight: bold;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Month Section */
+.month-container {
+    margin-bottom: 40px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.month-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.month-header {
+    text-align: center;
+    font-size: 2em;
+    color: #2980b9;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: slideInFromLeft 1s ease-in-out;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    border: none;
+    padding: 15px;
+    text-align: center;
+    background-color: #ecf0f1;
+    transition: all 0.3s ease;
+}
+th {
+    background: linear-gradient(135deg, #1abc9c, #3498db, #9b59b6);
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+}
+tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+tr:hover td {
+    background-color: #d1e7dd;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer and Buttons */
+.timer {
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 15px;
+    padding: 15px 25px;
+    border-radius: 50%;
+    background: #ffcccc;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: pulse 1.5s infinite;
+}
+.timer.active {
+    animation: blink-timer 1s infinite alternate;
+}
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #1abc9c, #3498db, #9b59b6);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    animation: buttonHover 1.5s infinite;
+}
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+button.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+.reset-button {
+    margin: 30px auto;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    animation: buttonHover 1.5s infinite;
+}
+.reset-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes blink-timer {
+    0% {
+        background-color: #ffcccc;
+        transform: scale(1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+        background-color: #ff6b6b;
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+@keyframes progressBarAnimation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+}
+@keyframes buttonHover {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    }
+}
